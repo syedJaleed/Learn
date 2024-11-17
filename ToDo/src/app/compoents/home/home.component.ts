@@ -11,12 +11,24 @@ export class HomeComponent {
     taskInfo: []
   };
 
+  searchQuery: string = ''; // Stores the user’s search input
+filteredTasks: any[] = []; // Stores the filtered tasks
+
   editingIndex: number | null = null; // Tracks the index of the task being edited
 editingTaskName: string = ''; // Temporary storage for the updated task name
   
   ngOnInit() {
     const storedTasks = localStorage.getItem('tasks');
     this.tasks.taskInfo = storedTasks ? JSON.parse(storedTasks) : [];
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default theme
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  this.filteredTasks = [...this.tasks.taskInfo];
+  }
+
+  changeTheme(theme: string) {
+    document.documentElement.setAttribute('data-theme', theme);
+
+    localStorage.setItem('theme', theme);
   }
   
   addTask() {
@@ -74,6 +86,21 @@ editingTaskName: string = ''; // Temporary storage for the updated task name
     if (modal) {
       modal.close();
     }
+  }
+
+  searchByTaskName() {
+    if (this.searchQuery.trim() !== '') {
+      this.filteredTasks = this.tasks.taskInfo.filter((task: any) =>
+        task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase())
+      );
+      console.log(this.filteredTasks);
+      
+    }
+  }
+  
+  resetSearch() {
+    this.searchQuery = ''; // Clear the search input
+    this.filteredTasks = [...this.tasks.taskInfo]; // Reset to all tasks
   }
 
 }

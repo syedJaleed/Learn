@@ -1,4 +1,4 @@
-<div class="p-6 bg-gray-100 min-h-screen">
+<div class="p-6">
   <!-- Task Input Section -->
   <div class="mb-6 flex items-center space-x-4">
     <input
@@ -17,15 +17,46 @@
     </button>
   </div>
 
+  <div class="fixed top-4 right-4 z-50">
+    <div class="dropdown dropdown-end">
+      <label tabindex="0" class="btn m-1">Theme</label>
+      <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a (click)="changeTheme('light')">Light</a></li>
+        <li><a (click)="changeTheme('dark')">Dark</a></li>
+        <li><a (click)="changeTheme('cupcake')">Cupcake</a></li>
+        <li><a (click)="changeTheme('bumblebee')">Bumblebee</a></li>
+        <li><a (click)="changeTheme('emerald')">Emerald</a></li>
+        <li><a (click)="changeTheme('corporate')">Corporate</a></li>
+        <li><a (click)="changeTheme('synthwave')">Synthwave</a></li>
+        <li><a (click)="changeTheme('retro')">Retro</a></li>
+        <li><a (click)="changeTheme('cyberpunk')">Cyberpunk</a></li>
+        <li><a (click)="changeTheme('valentine')">Valentine</a></li>
+        <li><a (click)="changeTheme('halloween')">Halloween</a></li>
+        <li><a (click)="changeTheme('garden')">Garden</a></li>
+        <li><a (click)="changeTheme('forest')">Forest</a></li>
+        <li><a (click)="changeTheme('aqua')">Aqua</a></li>
+        <li><a (click)="changeTheme('lofi')">Lofi</a></li>
+        <li><a (click)="changeTheme('pastel')">Pastel</a></li>
+        <li><a (click)="changeTheme('fantasy')">Fantasy</a></li>
+        <li><a (click)="changeTheme('wireframe')">Wireframe</a></li>
+        <li><a (click)="changeTheme('black')">Black</a></li>
+        <li><a (click)="changeTheme('luxury')">Luxury</a></li>
+        <li><a (click)="changeTheme('dracula')">Dracula</a></li>
+        <li><a (click)="changeTheme('cmyk')">CMYK</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
   <!-- Tasks List Section -->
   <div>
-    <h3 class="text-xl font-bold text-gray-700 mb-4">Tasks:</h3>
+    <h3 class="text-xl font-bold mb-4">Tasks:</h3>
     <ul *ngIf="tasks.taskInfo.length > 0; else noTasks" class="space-y-3">
       <li
         *ngFor="let task of tasks.taskInfo; let i = index"
-        class="flex justify-between items-center p-4 bg-white rounded-lg shadow-md"
+        class="flex justify-between items-center p-4 rounded-lg shadow-md"
       >
-        <span class="text-gray-700">{{ task.taskName }}</span>
+        <span>{{ task.taskName }}</span>
         <div class="space-x-2">
           <button 
             (click)="editTask(i)" 
