@@ -11,8 +11,8 @@ export class HomeComponent {
     taskInfo: []
   };
 
-  searchQuery: string = ''; // Stores the user’s search input
-filteredTasks: any[] = []; // Stores the filtered tasks
+  searchText = "";
+  originalTaskInfo: any[] = [];
 
   editingIndex: number | null = null; // Tracks the index of the task being edited
 editingTaskName: string = ''; // Temporary storage for the updated task name
@@ -22,7 +22,22 @@ editingTaskName: string = ''; // Temporary storage for the updated task name
     this.tasks.taskInfo = storedTasks ? JSON.parse(storedTasks) : [];
     const savedTheme = localStorage.getItem('theme') || 'light'; // Default theme
   document.documentElement.setAttribute('data-theme', savedTheme);
-  this.filteredTasks = [...this.tasks.taskInfo];
+  this.originalTaskInfo = [...this.tasks.taskInfo];
+  }
+
+  filterTasks(){
+    if (this.searchText.trim() === '') {
+      this.tasks.taskInfo = [...this.originalTaskInfo];
+    } else {
+      this.tasks.taskInfo = this.originalTaskInfo.filter((task: { taskName: string }) =>
+        task.taskName.toLowerCase().includes(this.searchText.toLowerCase())
+      );
+    }
+  //   let filteredTasks = this.tasks.taskInfo.filter((name: { taskName: string; }) =>
+  //     name.taskName.toLowerCase().includes(this.searchText.toLowerCase())
+  // );
+  // console.log(filteredTasks);
+  // this.tasks.taskInfo = filteredTasks;  
   }
 
   changeTheme(theme: string) {
@@ -86,21 +101,6 @@ editingTaskName: string = ''; // Temporary storage for the updated task name
     if (modal) {
       modal.close();
     }
-  }
-
-  searchByTaskName() {
-    if (this.searchQuery.trim() !== '') {
-      this.filteredTasks = this.tasks.taskInfo.filter((task: any) =>
-        task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase())
-      );
-      console.log(this.filteredTasks);
-      
-    }
-  }
-  
-  resetSearch() {
-    this.searchQuery = ''; // Clear the search input
-    this.filteredTasks = [...this.tasks.taskInfo]; // Reset to all tasks
   }
 
 }

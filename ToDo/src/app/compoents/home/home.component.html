@@ -3,6 +3,16 @@
   <div class="mb-6 flex items-center space-x-4">
     <input
       type="text"
+      [(ngModel)]="searchText"
+      (input)="filterTasks()"
+      placeholder="Search task"
+      class="input input-bordered w-full max-w-md"
+      [disabled]="editingIndex !== null"
+    />
+  </div>
+  <div class="mb-6 flex items-center space-x-4">
+    <input
+      type="text"
       [(ngModel)]="tasks.taskName"
       placeholder="Enter task name"
       class="input input-bordered w-full max-w-md"
