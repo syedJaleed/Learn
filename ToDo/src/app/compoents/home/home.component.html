@@ -67,6 +67,7 @@
         class="flex justify-between items-center p-4 rounded-lg shadow-md"
       >
         <span>{{ task.taskName }}</span>
+        <span>{{task.createdDate}}</span>
         <div class="space-x-2">
           <button 
             (click)="editTask(i)" 
