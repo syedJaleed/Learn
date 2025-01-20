@@ -1,0 +1,37 @@
+<div class="flex flex-col h-screen max-w-md mx-auto border border-gray-300 rounded-md">
+  <div class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50">
+    <div
+      *ngFor="let message of allMessages"
+      [ngClass]="{
+        'justify-end': message.type === 'sent',
+        'justify-start': message.type === 'received'
+      }"
+      class="flex"
+    >
+      <div
+        [ngClass]="{
+          'bg-green-100 text-gray-800': message.type === 'sent',
+          'bg-gray-200 text-gray-800': message.type === 'received'
+        }"
+        class="max-w-[70%] p-3 rounded-lg shadow-sm"
+      >
+        <p class="text-sm">{{ message.content }}</p>
+        <span class="block text-xs text-gray-500 mt-1">{{ message.timestamp | date: 'shortTime' }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center p-4 bg-white border-t border-gray-300">
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      placeholder="Type a message..."
+      class="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+    />
+    <button
+      (click)="sendMessage()"
+      class="ml-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+    >
+      Send
+    </button>
+  </div>
+</div>

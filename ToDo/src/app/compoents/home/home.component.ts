@@ -109,6 +109,7 @@
 // }
 
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -124,6 +125,10 @@ export class HomeComponent {
   originalTaskInfo: any[] = []; // Backup of the original task list
   editingIndex: number | null = null; // Tracks the index of the task being edited
   editingTaskName: string = ''; // Temporary storage for the updated task name
+
+  constructor(private router: Router){
+
+  }
 
   ngOnInit() {
     // Load tasks from localStorage
@@ -178,6 +183,10 @@ export class HomeComponent {
     } else {
       console.error('Task name is empty. Please enter a valid task name.');
     }
+  }
+
+  goToValidation(){
+    this.router.navigate(["validations"])
   }
 
   removeTask(index: number) {
