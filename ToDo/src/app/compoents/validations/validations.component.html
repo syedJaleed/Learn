@@ -32,3 +32,18 @@
           </form>
     </div>
 </div>
+
+<div>
+  <table class="table-auto">
+    <thead>
+      <tr>
+        <th *ngFor="let key of users[0] | keyvalue">{{key.key}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of users">
+        <td *ngFor="let value of item | keyvalue">{{ value.value }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
