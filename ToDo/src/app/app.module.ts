@@ -8,12 +8,17 @@ import { HomeComponent } from './compoents/home/home.component';
 import { ValidationsComponent } from './compoents/validations/validations.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './authentication/login/login.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { AuthServiceService } from './authentication/services/auth-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ValidationsComponent
+    ValidationsComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
   exports:[
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+<header class="app-header">
+    <nav>
+      <span class="logo">🧩 Project Manager</span>
+      <ul class="nav-links">
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/projects">Projects</a></li>
+        <li><a routerLink="/tasks">Tasks</a></li>
+      </ul>
+      <button *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</button>
+    </nav>
+  </header>

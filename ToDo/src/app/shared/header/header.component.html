@@ -1,0 +1,7 @@
+<nav style="padding: 1rem; background: #333; color: white; display: flex; justify-content: space-between;">
+    <span>My App</span>
+    <ng-container *ngIf="isLoggedIn$ | async as isLoggedIn">
+      <button *ngIf="!isLoggedIn" [routerLink]="['/login']">Login</button>
+      <button *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+    </ng-container>
+  </nav>

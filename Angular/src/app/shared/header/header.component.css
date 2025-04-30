@@ -1,0 +1,36 @@
+.app-header {
+    background-color: #282c34;
+    color: #fff;
+    padding: 1rem;
+  
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  
+      .logo {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+  
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+  
+        li a {
+          color: white;
+          text-decoration: none;
+        }
+      }
+  
+      button {
+        background: crimson;
+        border: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+  

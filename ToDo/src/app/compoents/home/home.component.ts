@@ -112,7 +112,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-header',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
