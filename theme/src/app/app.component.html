@@ -1,0 +1,283 @@
+<button class="btn btn-neutral">Neutral</button>
+<button class="btn btn-primary">Primary</button>
+<button class="btn btn-secondary">Secondary</button>
+<button class="btn btn-accent">Accent</button>
+<button class="btn btn-info">Info</button>
+<button class="btn btn-success">Success</button>
+<button class="btn btn-warning">Warning</button>
+<button class="btn btn-error">Error</button>
+ <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn m-1"> <div
+      [attr.data-theme]="savedTheme"
+      class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm"
+    >
+      <!-- Four circles showing base-content, primary, secondary, accent -->
+      <div class="bg-base-content size-2 rounded-full"></div>
+                <div class="bg-primary size-2 rounded-full"></div>
+                <div class="bg-secondary size-2 rounded-full"></div>
+                <div class="bg-accent size-2 rounded-full"></div>
+    </div><span class="hidden lg:inline-block"><i class="bi bi-chevron-down"></i></span></label>
+        <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-[17rem] z-50 h-[38rem]">
+          <li>
+            <a (click)="changeTheme('light')">
+              <div data-theme="light" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Light
+            </a>
+          </li>
+          <li><a (click)="changeTheme('dark')">
+              <div data-theme="dark" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Dark
+            </a></li>
+          <li><a (click)="changeTheme('cupcake')">
+              <div data-theme="cupcake" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Cupcake
+            </a></li>
+          <li><a (click)="changeTheme('bumblebee')">
+              <div data-theme="bumblebee" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Bumblebee
+            </a></li>
+          <li><a (click)="changeTheme('emerald')">
+              <div data-theme="emerald" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Emerald
+            </a></li>
+          <li><a (click)="changeTheme('corporate')">
+              <div data-theme="corporate" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Corporate
+            </a></li>
+          <li><a (click)="changeTheme('synthwave')">
+              <div data-theme="synthwave" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Synthwave
+            </a></li>
+          <li><a (click)="changeTheme('retro')">
+              <div data-theme="retro" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Retro
+            </a></li>
+          <li><a (click)="changeTheme('cyberpunk')">
+              <div data-theme="cyberpunk" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Cyberpunk
+            </a></li>
+          <li><a (click)="changeTheme('valentine')">
+              <div data-theme="valentine" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Valentine
+            </a></li>
+          <li><a (click)="changeTheme('halloween')">
+              <div data-theme="halloween" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Halloween
+            </a></li>
+          <li><a (click)="changeTheme('garden')">
+              <div data-theme="garden" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Garden
+            </a></li>
+          <li><a (click)="changeTheme('forest')">
+              <div data-theme="forest" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Forest
+            </a></li>
+          <li><a (click)="changeTheme('aqua')">
+              <div data-theme="aqua" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Aqua
+            </a></li>
+          <li><a (click)="changeTheme('lofi')">
+              <div data-theme="lofi" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Lofi
+            </a></li>
+          <li><a (click)="changeTheme('pastel')">
+              <div data-theme="pastel" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Pastel
+            </a></li>
+          <li><a (click)="changeTheme('fantasy')">
+              <div data-theme="fantasy" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Fantasy
+            </a></li>
+          <li><a (click)="changeTheme('wireframe')">
+              <div data-theme="wireframe" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Wireframe
+            </a></li>
+          <li><a (click)="changeTheme('black')">
+              <div data-theme="black" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Black
+            </a></li>
+          <li><a (click)="changeTheme('luxury')">
+              <div data-theme="luxury" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Luxury
+            </a></li>
+          <li><a (click)="changeTheme('dracula')">
+              <div data-theme="dracula" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>Dracula
+            </a></li>
+          <li><a (click)="changeTheme('cmyk')">
+              <div data-theme="cmyk" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>CMYK
+            </a></li>
+          <li><a (click)="changeTheme('autumn')">
+              <div data-theme="autumn" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>autumn
+            </a></li>
+          <li><a (click)="changeTheme('business')">
+              <div data-theme="business" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>business
+            </a></li>
+          <li><a (click)="changeTheme('acid')">
+              <div data-theme="acid" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>acid
+            </a></li>
+          <li><a (click)="changeTheme('lemonade')">
+              <div data-theme="lemonade" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>lemonade
+            </a></li>
+          <li><a (click)="changeTheme('night')">
+              <div data-theme="night" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>night
+            </a></li>
+          <li><a (click)="changeTheme('coffee')">
+              <div data-theme="coffee" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>coffee
+            </a></li>
+          <li><a (click)="changeTheme('winter')">
+              <div data-theme="winter" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>winter
+            </a></li>
+          <li><a (click)="changeTheme('dim')">
+              <div data-theme="dim" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>dim
+            </a></li>
+          <li><a (click)="changeTheme('nord')">
+              <div data-theme="nord" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>nord
+            </a></li>
+          <li><a (click)="changeTheme('sunset')">
+              <div data-theme="sunset" class="bg-base-100 grid shrink-0 grid-cols-2 gap-0.5 rounded-md p-1 shadow-sm">
+                <div class="bg-base-content size-1 rounded-full"></div>
+                <div class="bg-primary size-1 rounded-full"></div>
+                <div class="bg-secondary size-1 rounded-full"></div>
+                <div class="bg-accent size-1 rounded-full"></div>
+              </div>sunset
+            </a></li>
+        </ul>
+      </div>
+<div>
+ 
+</div>

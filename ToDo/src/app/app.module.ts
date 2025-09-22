@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './authentication/login/login.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { AuthServiceService } from './authentication/services/auth-service.service';
+import { ChildComponent } from './compoents/home/child/child.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthServiceService } from './authentication/services/auth-service.servi
     HomeComponent,
     ValidationsComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

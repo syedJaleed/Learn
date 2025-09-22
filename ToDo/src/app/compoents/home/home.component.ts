@@ -108,18 +108,40 @@
 
 // }
 
-import { Component } from '@angular/core';
+import { Component, Directive, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+
+
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  constructor(el: ElementRef) {
+    el.nativeElement.style.color = 'yellow';
+  }
+}
 
 @Component({
   selector: 'app-header',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
+
 export class HomeComponent {
   tasks: any = {
     taskInfo: [] // Main list of tasks
   };
+
+  fromChild = "";
+
+  filterText = ""; 
+
+  search = [
+    "apple", "banana", "cat", "dog"
+  ]
+
+  filteredSearch = [...this.search]
 
   searchText: string = '';
   originalTaskInfo: any[] = []; // Backup of the original task list
@@ -139,6 +161,18 @@ export class HomeComponent {
     // Set theme from localStorage or default to 'light'
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+
+  reciveFromChild(msg: string){
+    console.log("hii",msg);
+    this.fromChild = msg;
+  }
+
+  filterSearch(){
+    const text = this.filterText.toLowerCase();
+    this.filteredSearch = this.search.filter(item =>
+      item.toLowerCase().includes(text)
+    );
   }
 
   filterTasks() {

@@ -33,7 +33,17 @@
     </div>
 </div>
 
-<div>
+<div class="flex flex-wrap">
+  <div *ngFor="let item of productData" class="p-4 m-2 border-gray-500 border-2 w-32">
+  <div>
+    <p>{{item.userId}}</p>
+    <p>{{item.title}}</p>
+  </div>
+</div>
+</div>
+
+
+<!-- <div>
   <table class="table-auto">
     <thead>
       <tr>
@@ -46,4 +56,4 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->

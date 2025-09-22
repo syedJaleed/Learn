@@ -10,6 +10,18 @@
       [disabled]="editingIndex !== null"
     />
   </div>
+  <div>
+    <input
+    type="text"
+    [(ngModel)]="filterText"
+    (input)="filterSearch()"
+    placeholder="Search new"
+    class="input input-bordered w-full max-w-md"
+  />
+  </div>
+  <div *ngFor="let t of filteredSearch">
+    <p>{{t}}</p>
+  </div>
   <div class="mb-6 flex items-center space-x-4">
     <input
       type="text"
@@ -27,7 +39,7 @@
     </button>
   </div>
 
-  <!-- <div class="fixed top-4 right-4 z-50">
+  <div class="fixed top-4 right-4 z-50">
     <div class="dropdown dropdown-end">
       <label tabindex="0" class="btn m-1">Theme</label>
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
@@ -55,8 +67,10 @@
         <li><a (click)="changeTheme('cmyk')">CMYK</a></li>
       </ul>
     </div>
-  </div> -->
+  </div>
   
+  <app-child (messageEvent)="reciveFromChild($event)" ></app-child>
+  <p>{{fromChild}}</p>
 
   <!-- Tasks List Section -->
   <div>
@@ -103,6 +117,7 @@
       Go To Validations
     </button>
 </div>
+<p appHighlight>This text has a yellow background.</p>
 
 <dialog id="my_modal_2" class="modal">
   <div *ngIf="editingIndex !== null" class="modal-box">

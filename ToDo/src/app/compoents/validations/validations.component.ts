@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-validations',
@@ -11,9 +12,10 @@ export class ValidationsComponent {
 
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient){
+  constructor(private fb: FormBuilder, private http: HttpClient, private productsService: ProductsService){
     this.validate();
     this.getData();
+    this.getProducts();
   }
 
   validate(){
@@ -62,10 +64,10 @@ export class ValidationsComponent {
     this.http.get<any>("https://dummyjson.com/users").subscribe(
       (response) => {
         this.users = response.users;
-        console.log(this.users);
+        // console.log(this.users);
         for(let details of this.users){
           this.headings = Object.keys(details)
-          console.log(this.headings)
+          // console.log(this.headings)
         }
         // console.log(this.u);
         // for(let )
@@ -77,4 +79,15 @@ export class ValidationsComponent {
     )
   }
 
+
+  productData = [];
+
+  getProducts(){
+    this.productsService.getProducts().subscribe(
+      (data) => {
+        this.productData = data;
+        console.log(this.productData)
+      }
+    )
+  }
 }
