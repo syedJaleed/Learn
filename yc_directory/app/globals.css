@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* 👇 Import Tailwind's default theme to extend */
+@import "@tailwindcss/theme" theme;
+
+/* 👇 Your custom theme */
+@theme {
+  /* ===== Breakpoints ===== */
+  --breakpoint-xs: 475px;
+
+  /* ===== Colors ===== */
+  --color-primary-100: #FFE8F0;
+  --color-primary: #EE2B69;
+
+  --color-secondary: #FBE843;
+
+  --color-black-100: #333333;
+  --color-black-200: #141413;
+  --color-black-300: #7D8087;
+  --color-black: #000000;
+
+  --color-white-100: #F7F7F7;
+  --color-white: #FFFFFF;
+
+  /* ===== Fonts ===== */
+  --font-work-sans: var(--font-work-sans);
+
+  /* ===== Border Radius ===== */
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  /* ===== Box Shadows ===== */
+  --shadow-100: 2px 2px 0px 0px rgb(0, 0, 0);
+  --shadow-200: 2px 2px 0px 2px rgb(0, 0, 0);
+  --shadow-300: 2px 2px 0px 2px rgb(238, 43, 105);
+}
+
+/* 👇 Plugins (replaces plugins array in tailwind.config.ts) */
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-animate";
+
+/* 👇 Tailwind directives */
+@tailwind utilities;
+
