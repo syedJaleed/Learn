@@ -1,0 +1,114 @@
+<!-- dashboard.component.html -->
+
+<div class="min-h-screen p-6">
+
+  <!-- Header -->
+
+  <!-- create-post.component.html -->
+
+  <div class="max-w-lg mx-auto mt-10 p-6 rounded-lg shadow">
+
+    <h2 class="text-xl font-bold mb-4">Create Post</h2>
+
+    <form [formGroup]="postForm" (ngSubmit)="createPostSubmit()">
+
+      <!-- Title -->
+      <div class="mb-4">
+        <label class="block mb-1">Title</label>
+        <input type="text" formControlName="title" class="w-full border px-3 py-2 rounded" />
+
+        @if (title?.touched && title?.invalid) {
+        <p class="text-red-500 text-sm">
+          Title must be at least 3 characters
+        </p>
+        }
+      </div>
+
+      <!-- Content -->
+      <div class="mb-4">
+        <label class="block mb-1">Content</label>
+        <textarea formControlName="content" class="w-full border px-3 py-2 rounded"></textarea>
+
+        @if (content?.touched && content?.invalid) {
+        <p class="text-red-500 text-sm">
+          Content is required
+        </p>
+        }
+      </div>
+
+      <!-- Published -->
+      <div class="mb-4">
+        <label>
+          <input type="checkbox" formControlName="published" />
+          Published
+        </label>
+      </div>
+
+      <!-- Error -->
+      @if (error) {
+      <p class="text-red-500 mb-3">{{ error }}</p>
+      }
+
+      <!-- Success -->
+      @if (success) {
+      <p class="text-green-600 mb-3">{{ success }}</p>
+      }
+
+      <!-- Button -->
+      <button type="submit" [disabled]="loading" class="bg-blue-600 text-white px-4 py-2 rounded w-full">
+        {{ loading ? 'Creating...' : 'Create Post' }}
+      </button>
+
+    </form>
+
+  </div>
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Posts Dashboard</h1>
+    <div class="flex gap-2">
+      <button (click)="logout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+      Logout
+    </button>
+    <button class="btn btn-primary" (click)="goToUser()">User</button>
+    </div>
+
+  </div>
+
+  <!-- Loader -->
+  <div *ngIf="loading" class="text-gray-600">
+    Loading posts...
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error" class="text-red-500 mb-4">
+    {{ error }}
+    <button (click)="fetchPosts()" class="ml-3 text-blue-500 underline">
+      Retry
+    </button>
+  </div>
+
+  <!-- Posts List -->
+  <div *ngIf="!loading && posts.length > 0" class="grid gap-4">
+
+    <div *ngFor="let post of posts" class="p-4 rounded-lg shadow hover:shadow-md transition">
+      <h2 class="text-lg font-semibold mb-1">
+        {{ post.title }}
+      </h2>
+
+      <p class="mb-2">
+        {{ post.content }}
+      </p>
+
+      <span class="text-sm px-2 py-1 rounded"
+        [ngClass]="post.published ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'">
+        {{ post.published ? 'Published' : 'Draft' }}
+      </span>
+    </div>
+
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && posts.length === 0" class="text-gray-500">
+    No posts available.
+  </div>
+
+</div>

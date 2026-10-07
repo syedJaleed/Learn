@@ -1,0 +1,122 @@
+<p>rxjs-basic works!</p>
+
+<!-- <input type="text" [formControl]="searchControl" placeholder="Enter Id">
+<button (click)="getUser()">Get Data</button>
+
+<button (click)="onButtonClick()" class="border-2">Login</button> -->
+
+<form [formGroup]="userForm" class="max-w-3xl mx-auto mt-10" (submit)="submitForm()">
+
+  <div class="card bg-base-100 shadow-xl border border-base-300">
+
+    <div class="card-body">
+
+      <h2 class="card-title text-2xl mb-4">
+        User Registration
+      </h2>
+
+      <!-- Name -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Full Name</span>
+        </label>
+        <input type="text" formControlName="name" placeholder="Enter name" class="input input-bordered w-full" />
+      </div>
+
+      <!-- Email -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Email</span>
+        </label>
+        <input type="email" formControlName="email" placeholder="Enter email" class="input input-bordered w-full" />
+      </div>
+
+      <!-- Password Row -->
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input type="password" formControlName="password" class="input input-bordered w-full" />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Confirm Password</span>
+          </label>
+          <input type="password" formControlName="confirmPassword" class="input input-bordered w-full" />
+        </div>
+
+      </div>
+
+      <!-- Age -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Age</span>
+        </label>
+        <input type="number" formControlName="age" class="input input-bordered w-full" />
+      </div>
+
+      <!-- Driving License -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Driving License</span>
+        </label>
+        <input type="text" formControlName="drivingLicense" class="input input-bordered w-full" />
+      </div>
+
+      <!-- Country Dropdown -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Country</span>
+        </label>
+        <select formControlName="country" class="select select-bordered w-full">
+          <option value="">Select Country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>UK</option>
+        </select>
+      </div>
+
+      <!-- Currency Dropdown -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Currency</span>
+        </label>
+        <select formControlName="currency" class="select select-bordered w-full">
+          <option value="">Select Currency</option>
+          <option>INR</option>
+          <option>USD</option>
+          <option>GBP</option>
+        </select>
+      </div>
+
+      <!-- Search -->
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Search</span>
+        </label>
+        <input type="text" formControlName="search" placeholder="Search..." class="input input-bordered w-full" />
+      </div>
+
+      <!-- Subscribe Toggle -->
+      <div class="form-control mt-2">
+        <label class="cursor-pointer label justify-start gap-4">
+          <input type="checkbox" formControlName="subscribe" class="toggle toggle-primary" />
+          <span class="label-text">Subscribe to Newsletter</span>
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <div class="card-actions justify-end mt-6">
+        <button class="btn btn-primary" type="submit" [disabled]="userForm.invalid">
+          Submit
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
